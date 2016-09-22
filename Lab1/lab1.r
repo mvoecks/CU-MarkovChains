@@ -39,21 +39,22 @@ createY <- function(){
       stop <- 1
     }
   }
+  return(count)
 }
 
 #part 4
 countArrayX <- NULL
 countArrayY <- NULL
-for(j in 1:2000){
+for(j in 1:200){
   countArrayX <- c(countArrayX, createX())
 }
-for(j in 1:2000){
+for(j in 1:200){
   countArrayY <- c(countArrayY, createY())
 }
 
 # histogram
 png("histogramX.png")
-hist(countArrayX);
+barplot(as.vector(table(countArrayX)))
 dev.off()
 
 # histogram
