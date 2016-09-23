@@ -42,22 +42,59 @@ createY <- function(){
   return(count)
 }
 
+
+if(FALSE){
 #part 4
 countArrayX <- NULL
 countArrayY <- NULL
-for(j in 1:200){
+for(j in 1:2000){
   countArrayX <- c(countArrayX, createX())
 }
-for(j in 1:200){
+for(j in 1:2000){
   countArrayY <- c(countArrayY, createY())
 }
 
-# histogram
+# histogram X
 png("histogramX.png")
 barplot(as.vector(table(countArrayX)))
 dev.off()
 
-# histogram
+# histogram Y
 png("histogramY.png")
 hist(countArrayY);
 dev.off()
+
+# Binomial barplot
+png("binomialdistribution.png")
+barplot(dbinom(0:10, 6000, 1/5040)*2000)
+dev.off()
+}
+
+
+simulateQa <- function(n){
+  rPermutation <- NULL
+  count <- 0
+  countQa <- NULL
+  for(i in 1:10000){
+    rPermutation = permutationCreator(n);
+    count <- 0
+    for(i in 1:n){
+      count <- count+1
+      if(rPermutation[[i]] == 1)
+        break
+    }
+    countQa <- c(countQa, count)
+  }
+  return(countQa)
+}
+
+
+average <- mean(simulateQa(9))
+print(average)
+average <- mean(simulateQa(21))
+print(average)
+average <- mean(simulateQa(36))
+print(average)
+average <- mean(simulateQa(69))
+print(average)
+
