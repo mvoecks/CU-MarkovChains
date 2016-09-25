@@ -51,7 +51,10 @@ for(j in 1:2000){
 for(j in 1:2000){
   countArrayY <- c(countArrayY, createY())
 }
+print(countArrayX)
+print(countArrayY)
 
+if(FALSE){
 # histogram X
 png("histogramX.png")
 barplot(as.vector(table(countArrayX)), xlim=c(0,8), ylim=c(0,900))
@@ -62,11 +65,10 @@ plot(b,a, col="blue", xlim=c(0,8), ylim=c(0,900))
 dev.off()
 
 # histogram Y
-print(countArrayY)
 png("histogramY.png")
 hist(countArrayY);
 dev.off()
-
+}
 
 #SECTION 2
 
