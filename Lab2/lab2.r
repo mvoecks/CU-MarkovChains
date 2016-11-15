@@ -30,12 +30,13 @@ simulateNHPP <- function(time){
     return(count)
 }
 
+cat(rpois(10000, 12))
 
 #10000 simulations of the HPP(3,4)
 for(i in 1:10000){
     temp <- simulateHPP(3,4)
 #    print(c(length(temp), temp[length(temp)-1], temp[length(temp)]))
-    cat(',',temp[length(temp)])
+    cat(',',length(temp))
 }
 
 #10000 simulations of the NHPP(t^2 - 10t + 26, 9)
