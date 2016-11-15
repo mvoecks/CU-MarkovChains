@@ -41,7 +41,7 @@ createY <- function(){
   }
   return(count)
 }
-
+if(FALSE){
 #part 4
 countArrayX <- NULL
 countArrayY <- NULL
@@ -69,7 +69,7 @@ png("histogramY.png")
 hist(countArrayY);
 dev.off()
 }
-
+}
 #SECTION 2
 
 #part 2
