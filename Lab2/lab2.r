@@ -33,8 +33,8 @@ simulateNHPP <- function(time){
 #10000 simulations of the HPP(3,4)
 for(i in 1:10000){
     temp <- simulateHPP(3,4)
-#    print(c(length(temp), temp[length(temp)-1], temp[length(temp)]))
-    cat(',',length(temp))
+#    print(c(length(temp)-1, temp[length(temp)-1], temp[length(temp)]))
+    cat(',',length(temp)-1)
 }
 
 #10000 simulations of the NHPP(t^2 - 10t + 26, 9)
