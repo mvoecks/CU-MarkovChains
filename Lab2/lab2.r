@@ -38,8 +38,9 @@ simulateNHPP <- function(time){
 #}
 
 #10000 simulations of the NHPP(t^2 - 10t + 26, 9)
-temp <- c()
-for(i in 1:10000){
-    temp <- c(temp,simulateNHPP(9))
-}
-print(mean(temp))
+#temp <- c()
+#for(i in 1:10000){
+#    temp <- c(temp,simulateNHPP(9))
+#}
+
+cat(dpois(0:30,12)*10000)
