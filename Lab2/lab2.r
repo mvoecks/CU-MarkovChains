@@ -43,4 +43,4 @@ simulateNHPP <- function(time){
 #    temp <- c(temp,simulateNHPP(9))
 #}
 
-cat(dpois(0:30,12)*10000)
+cat(dexp(0:30,3)*10000)
