@@ -34,4 +34,5 @@ temp <- c()
 for (i in 1:10000){
     temp <- c(temp, simulateMM1(1, 2, rgeom(1, .5), 50))
 }
-cat(temp)
+#cat(temp)
+cat(rgeom(10000,.5))
