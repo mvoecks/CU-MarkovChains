@@ -3,14 +3,17 @@
 #Simulating a M/M/1 queue:
 simulateMM1 <- function(lambda, mu, n, endTime){
     t <- 0
+    busyTime <- 50
     nextT <- 0
     u <- 0
-    stop <- FALSE
+    interDeparture <- 0
+    interDeparturetimes <- c()
     repeat{
         if(n == 0){
             nextT <- rexp(1, lambda)
             t <- t+nextT
 	    n <- n+1
+	    busyTime <- busyTime-nextT
         }
         else{
             nextT <- rexp(1, lambda+mu)
@@ -21,18 +24,21 @@ simulateMM1 <- function(lambda, mu, n, endTime){
 	    }
 	    else{
                 n <- n-1
+	        interDeparturetimes <- c(interDeparturetimes, t-interDeparture)
+		interDeparture <- t
 	    }
 	}
 	if(t >= endTime){
 	    break
 	}
     }
-    return(n)
+    return(interDeparturetimes)
 }
 
-temp <- c()
-for (i in 1:10000){
-    temp <- c(temp, simulateMM1(1, 2, rgeom(1, .5), 50))
-}
+#temp <- c()
+#for (i in 1:1000){
+#    temp <- c(temp, simulateMM1(1,2,rgeom(1,.5),50))
+#}
+
 #cat(temp)
-cat(rgeom(10000,.5))
+cat(rexp(50431, 1))	
