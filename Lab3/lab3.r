@@ -1,7 +1,4 @@
 #!/user/bin/Rscript
-#5000 1839.397 676.6764 248.9353 91.57819 33.68973 12.39376 4.55941 1.677313
-#5000 2500 1250 625 312.5 156.25 78.125 39.0625 19.53125
-#
 #Simulating a M/M/1 queue:
 simulateMM1 <- function(lambda, mu, n, endTime){
     t <- 0
@@ -40,4 +37,4 @@ simulateMM1 <- function(lambda, mu, n, endTime){
 #    temp <- c(temp, simulateMM1(1,2,rgeom(1,.5),50))
 #}
 
-cat(dpois(30:80, 50)*10000)
+cat(dgeom(0:8, .5)*10000)
