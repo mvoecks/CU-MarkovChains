@@ -40,4 +40,4 @@ simulateMM1 <- function(lambda, mu, n, endTime){
 #    temp <- c(temp, simulateMM1(1,2,rgeom(1,.5),50))
 #}
 
-cat(d)
+cat(dpois(30:80, 50)*10000)
