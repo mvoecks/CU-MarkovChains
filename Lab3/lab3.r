@@ -26,8 +26,8 @@ simulateMM1 <- function(lambda, mu, n, endTime){
 	if(t >= endTime){
 	    break
 	}
-	return(n)
     }
+    return(n)
 }
 
 temp <- c()
